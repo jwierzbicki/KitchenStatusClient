@@ -1,0 +1,13 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+  <item
+      android:id="@+id/menu_shoppinglist"
+      android:icon="@mipmap/baseline_shopping_cart_black_18dp"
+      android:showAsAction="ifRoom"
+      android:title="Generate shopping list" />
+  <item
+      android:id="@+id/menu_preferences"
+      android:showAsAction="never"
+      android:title="Preferences"/>
+</menu>
