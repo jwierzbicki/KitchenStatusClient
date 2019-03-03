@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Net.Http.Headers;
 using Android.Content;
 using Newtonsoft.Json;
+using KitchenStatusClient.Models;
 
 namespace KitchenStatusClient
 {
@@ -21,7 +22,7 @@ namespace KitchenStatusClient
         static Product[] items;
         public static HttpClient httpClient;
 
-        public enum RequestType { GetAllProducts, PostNewStatusUpdate };
+        public enum RequestType { GetAllProducts, PostNewStatusUpdate, GenerateShoppingList };
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
@@ -31,12 +32,13 @@ namespace KitchenStatusClient
             SupportActionBar.Title = "Kitchen Status";
 
             httpClient = new HttpClient();
-            httpClient.BaseAddress = new Uri("http://192.168.0.110/");
+            httpClient.BaseAddress = new Uri("http://85.237.182.107:8080/");
+            //httpClient.BaseAddress = new Uri("http://192.168.0.110/");
             httpClient.DefaultRequestHeaders.Accept.Clear();
             httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
             // Get all products from /api/products URI
-            await RunAsync(RequestType.GetAllProducts);
+            items = await RunAsync<Product[]>(RequestType.GetAllProducts);
             
             adapter = new ProductListAdapter(this, items);
             listView = FindViewById<ListView>(Resource.Id.listView);
@@ -65,20 +67,37 @@ namespace KitchenStatusClient
         {
             Toast.MakeText(this, "Action selected: " + item.TitleFormatted, ToastLength.Short).Show();
 
+            switch (item.ItemId)
+            {
+                case Resource.Id.menu_shoppinglist:
+                    Intent intent = new Intent(this, typeof(ShoppingListActivity));
+                    StartActivityForResult(intent, 101);
+                    break;
+                case Resource.Id.menu_preferences:
+                    // todo
+                    break;
+            }
+
             return base.OnOptionsItemSelected(item);
         }
 
-        public static async Task RunAsync(RequestType requestType, StatusUpdate statusUpdate = null)
+        public static async Task<T> RunAsync<T>(RequestType requestType, StatusUpdate statusUpdate = null)
         {
+            object value = null;
             switch(requestType)
             {
                 case RequestType.GetAllProducts:
-                    items = await GetProductsAsync("api/products");
+                    value = await GetProductsAsync("api/products");
                     break;
                 case RequestType.PostNewStatusUpdate:
-                    await CreateStatusUpdate("api/statusupdates", statusUpdate);
+                    value = await CreateStatusUpdate("api/statusupdates", statusUpdate);
+                    break;
+                case RequestType.GenerateShoppingList:
+                    value = await GetShoppingList("api/products/shoppinglist");
                     break;
             }
+
+            return (T) Convert.ChangeType(value, typeof(T));
         }
 
         static async Task<Product[]> GetProductsAsync(string path)
@@ -104,6 +123,19 @@ namespace KitchenStatusClient
             return response.Headers.Location;
         }
 
+        static async Task<ShoppingItem[]> GetShoppingList(string path)
+        {
+            ShoppingItem[] shoppingItems = null;
+
+            HttpResponseMessage response = await httpClient.GetAsync(path).ConfigureAwait(false);
+            if(response.IsSuccessStatusCode)
+            {
+                shoppingItems = await response.Content.ReadAsAsync<ShoppingItem[]>();
+            }
+
+            return shoppingItems;
+        }
+
         public static string CapitalizeString(string s)
         {
             return char.ToUpper(s[0]) + s.Substring(1);
@@ -113,12 +145,12 @@ namespace KitchenStatusClient
         {
             base.OnActivityResult(requestCode, resultCode, data);
 
-            Toast.MakeText(this, "Returned from editing", ToastLength.Short).Show();
+            Toast.MakeText(this, "Returned from editing or shopping", ToastLength.Short).Show();
 
-            if(requestCode == 100 && resultCode == Result.Ok)
+            if(resultCode == Result.Ok && (requestCode == 100 || requestCode == 101))
             {
                 // Refresh the list
-                await RunAsync(RequestType.GetAllProducts);
+                items = await RunAsync<Product[]>(RequestType.GetAllProducts);
 
                 Toast.MakeText(this, "List fetched", ToastLength.Short).Show();
 

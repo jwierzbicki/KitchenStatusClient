@@ -52,8 +52,8 @@ namespace KitchenStatusClient
 
             Toast.MakeText(this, $"Saving changes with value: {newValue}", ToastLength.Short).Show();
             // Call API
-            await MainActivity.RunAsync(MainActivity.RequestType.PostNewStatusUpdate, statusUpdate);
-            Toast.MakeText(this, "Changes saved", ToastLength.Short).Show();
+            var uri = await MainActivity.RunAsync<Uri>(MainActivity.RequestType.PostNewStatusUpdate, statusUpdate);
+            Toast.MakeText(this, $"Changes saved: {uri}", ToastLength.Short).Show();
 
             var intent = new Intent();
             SetResult(Result.Ok, intent);
