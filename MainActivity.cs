@@ -13,10 +13,11 @@ using Newtonsoft.Json;
 
 namespace KitchenStatusClient
 {
-    [Activity(Theme = "@style/AppTheme", MainLauncher = true)]
+    [Activity(Theme = "@style/MyTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        ListView listView;
+        static ListView listView;
+        static ProductListAdapter adapter;
         static Product[] items;
         public static HttpClient httpClient;
 
@@ -37,8 +38,9 @@ namespace KitchenStatusClient
             // Get all products from /api/products URI
             await RunAsync(RequestType.GetAllProducts);
             
+            adapter = new ProductListAdapter(this, items);
             listView = FindViewById<ListView>(Resource.Id.listView);
-            listView.Adapter = new ProductListAdapter(this, items);
+            listView.Adapter = adapter;
             listView.ItemClick += OnListItemClick;
         }
 
@@ -49,7 +51,8 @@ namespace KitchenStatusClient
 
             Intent intent = new Intent(this, typeof(EditStatusActivity));
             intent.PutExtra("product", JsonConvert.SerializeObject(product));
-            StartActivity(intent);
+            //StartActivity(intent);
+            StartActivityForResult(intent, 100);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -81,6 +84,7 @@ namespace KitchenStatusClient
         static async Task<Product[]> GetProductsAsync(string path)
         {
             Product[] products = null;
+            // HTTP GET whole product list
             HttpResponseMessage response = await httpClient.GetAsync(path).ConfigureAwait(false);
             if(response.IsSuccessStatusCode)
             {
@@ -92,11 +96,35 @@ namespace KitchenStatusClient
 
         static async Task<Uri> CreateStatusUpdate(string path, StatusUpdate statusUpdate)
         {
+            // HTTP POST the product status update
             HttpResponseMessage response = await httpClient.PostAsJsonAsync(path, statusUpdate);
             response.EnsureSuccessStatusCode();
 
             // return URI of the created resource
             return response.Headers.Location;
+        }
+
+        public static string CapitalizeString(string s)
+        {
+            return char.ToUpper(s[0]) + s.Substring(1);
+        }
+
+        protected override async void OnActivityResult(int requestCode, Result resultCode, Intent data)
+        {
+            base.OnActivityResult(requestCode, resultCode, data);
+
+            Toast.MakeText(this, "Returned from editing", ToastLength.Short).Show();
+
+            if(requestCode == 100 && resultCode == Result.Ok)
+            {
+                // Refresh the list
+                await RunAsync(RequestType.GetAllProducts);
+
+                Toast.MakeText(this, "List fetched", ToastLength.Short).Show();
+
+                adapter = new ProductListAdapter(this, items);
+                listView.Adapter = adapter;
+            }
         }
 	}
 }

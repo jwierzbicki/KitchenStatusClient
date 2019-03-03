@@ -1187,44 +1187,44 @@ namespace KitchenStatusClient
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0c004b
-			public const int abc_background_cache_hint_selector_material_dark = 2131492939;
-			
 			// aapt resource value: 0x7f0c004c
-			public const int abc_background_cache_hint_selector_material_light = 2131492940;
+			public const int abc_background_cache_hint_selector_material_dark = 2131492940;
 			
 			// aapt resource value: 0x7f0c004d
-			public const int abc_btn_colored_borderless_text_material = 2131492941;
+			public const int abc_background_cache_hint_selector_material_light = 2131492941;
 			
 			// aapt resource value: 0x7f0c004e
-			public const int abc_btn_colored_text_material = 2131492942;
+			public const int abc_btn_colored_borderless_text_material = 2131492942;
 			
 			// aapt resource value: 0x7f0c004f
-			public const int abc_color_highlight_material = 2131492943;
+			public const int abc_btn_colored_text_material = 2131492943;
 			
 			// aapt resource value: 0x7f0c0050
-			public const int abc_hint_foreground_material_dark = 2131492944;
+			public const int abc_color_highlight_material = 2131492944;
 			
 			// aapt resource value: 0x7f0c0051
-			public const int abc_hint_foreground_material_light = 2131492945;
+			public const int abc_hint_foreground_material_dark = 2131492945;
+			
+			// aapt resource value: 0x7f0c0052
+			public const int abc_hint_foreground_material_light = 2131492946;
 			
 			// aapt resource value: 0x7f0c0000
 			public const int abc_input_method_navigation_guard = 2131492864;
 			
-			// aapt resource value: 0x7f0c0052
-			public const int abc_primary_text_disable_only_material_dark = 2131492946;
-			
 			// aapt resource value: 0x7f0c0053
-			public const int abc_primary_text_disable_only_material_light = 2131492947;
+			public const int abc_primary_text_disable_only_material_dark = 2131492947;
 			
 			// aapt resource value: 0x7f0c0054
-			public const int abc_primary_text_material_dark = 2131492948;
+			public const int abc_primary_text_disable_only_material_light = 2131492948;
 			
 			// aapt resource value: 0x7f0c0055
-			public const int abc_primary_text_material_light = 2131492949;
+			public const int abc_primary_text_material_dark = 2131492949;
 			
 			// aapt resource value: 0x7f0c0056
-			public const int abc_search_url_text = 2131492950;
+			public const int abc_primary_text_material_light = 2131492950;
+			
+			// aapt resource value: 0x7f0c0057
+			public const int abc_search_url_text = 2131492951;
 			
 			// aapt resource value: 0x7f0c0001
 			public const int abc_search_url_text_normal = 2131492865;
@@ -1235,29 +1235,29 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f0c0003
 			public const int abc_search_url_text_selected = 2131492867;
 			
-			// aapt resource value: 0x7f0c0057
-			public const int abc_secondary_text_material_dark = 2131492951;
-			
 			// aapt resource value: 0x7f0c0058
-			public const int abc_secondary_text_material_light = 2131492952;
+			public const int abc_secondary_text_material_dark = 2131492952;
 			
 			// aapt resource value: 0x7f0c0059
-			public const int abc_tint_btn_checkable = 2131492953;
+			public const int abc_secondary_text_material_light = 2131492953;
 			
 			// aapt resource value: 0x7f0c005a
-			public const int abc_tint_default = 2131492954;
+			public const int abc_tint_btn_checkable = 2131492954;
 			
 			// aapt resource value: 0x7f0c005b
-			public const int abc_tint_edittext = 2131492955;
+			public const int abc_tint_default = 2131492955;
 			
 			// aapt resource value: 0x7f0c005c
-			public const int abc_tint_seek_thumb = 2131492956;
+			public const int abc_tint_edittext = 2131492956;
 			
 			// aapt resource value: 0x7f0c005d
-			public const int abc_tint_spinner = 2131492957;
+			public const int abc_tint_seek_thumb = 2131492957;
 			
 			// aapt resource value: 0x7f0c005e
-			public const int abc_tint_switch_track = 2131492958;
+			public const int abc_tint_spinner = 2131492958;
+			
+			// aapt resource value: 0x7f0c005f
+			public const int abc_tint_switch_track = 2131492959;
 			
 			// aapt resource value: 0x7f0c0004
 			public const int accent_material_dark = 2131492868;
@@ -1313,8 +1313,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f0c003c
 			public const int design_bottom_navigation_shadow_color = 2131492924;
 			
-			// aapt resource value: 0x7f0c005f
-			public const int design_error = 2131492959;
+			// aapt resource value: 0x7f0c0060
+			public const int design_error = 2131492960;
 			
 			// aapt resource value: 0x7f0c003d
 			public const int design_fab_shadow_end_color = 2131492925;
@@ -1340,8 +1340,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f0c0044
 			public const int design_snackbar_background_color = 2131492932;
 			
-			// aapt resource value: 0x7f0c0060
-			public const int design_tint_password_toggle = 2131492960;
+			// aapt resource value: 0x7f0c0061
+			public const int design_tint_password_toggle = 2131492961;
 			
 			// aapt resource value: 0x7f0c0012
 			public const int dim_foreground_disabled_material_dark = 2131492882;
@@ -1370,8 +1370,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f0c001a
 			public const int highlighted_text_material_light = 2131492890;
 			
-			// aapt resource value: 0x7f0c004a
-			public const int ic_launcher_background = 2131492938;
+			// aapt resource value: 0x7f0c004b
+			public const int ic_launcher_background = 2131492939;
 			
 			// aapt resource value: 0x7f0c001b
 			public const int material_blue_grey_800 = 2131492891;
@@ -1466,11 +1466,11 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f0c0036
 			public const int switch_thumb_disabled_material_light = 2131492918;
 			
-			// aapt resource value: 0x7f0c0061
-			public const int switch_thumb_material_dark = 2131492961;
-			
 			// aapt resource value: 0x7f0c0062
-			public const int switch_thumb_material_light = 2131492962;
+			public const int switch_thumb_material_dark = 2131492962;
+			
+			// aapt resource value: 0x7f0c0063
+			public const int switch_thumb_material_light = 2131492963;
 			
 			// aapt resource value: 0x7f0c0037
 			public const int switch_thumb_normal_material_dark = 2131492919;
@@ -1483,6 +1483,9 @@ namespace KitchenStatusClient
 			
 			// aapt resource value: 0x7f0c003a
 			public const int tooltip_background_light = 2131492922;
+			
+			// aapt resource value: 0x7f0c004a
+			public const int white = 2131492938;
 			
 			static Color()
 			{
@@ -2345,8 +2348,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f080037
 			public const int SYM = 2131230775;
 			
-			// aapt resource value: 0x7f0800a1
-			public const int action0 = 2131230881;
+			// aapt resource value: 0x7f0800a2
+			public const int action0 = 2131230882;
 			
 			// aapt resource value: 0x7f08007c
 			public const int action_bar = 2131230844;
@@ -2369,17 +2372,17 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f08005a
 			public const int action_bar_title = 2131230810;
 			
-			// aapt resource value: 0x7f08009e
-			public const int action_container = 2131230878;
+			// aapt resource value: 0x7f08009f
+			public const int action_container = 2131230879;
 			
 			// aapt resource value: 0x7f08007d
 			public const int action_context_bar = 2131230845;
 			
-			// aapt resource value: 0x7f0800a5
-			public const int action_divider = 2131230885;
+			// aapt resource value: 0x7f0800a6
+			public const int action_divider = 2131230886;
 			
-			// aapt resource value: 0x7f08009f
-			public const int action_image = 2131230879;
+			// aapt resource value: 0x7f0800a0
+			public const int action_image = 2131230880;
 			
 			// aapt resource value: 0x7f080003
 			public const int action_menu_divider = 2131230723;
@@ -2396,11 +2399,11 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f08005c
 			public const int action_mode_close_button = 2131230812;
 			
-			// aapt resource value: 0x7f0800a0
-			public const int action_text = 2131230880;
+			// aapt resource value: 0x7f0800a1
+			public const int action_text = 2131230881;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int actions = 2131230894;
+			// aapt resource value: 0x7f0800af
+			public const int actions = 2131230895;
 			
 			// aapt resource value: 0x7f08005d
 			public const int activity_chooser_view_content = 2131230813;
@@ -2435,8 +2438,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f080063
 			public const int buttonPanel = 2131230819;
 			
-			// aapt resource value: 0x7f0800a2
-			public const int cancel_action = 2131230882;
+			// aapt resource value: 0x7f0800a3
+			public const int cancel_action = 2131230883;
 			
 			// aapt resource value: 0x7f080045
 			public const int center = 2131230789;
@@ -2450,8 +2453,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f080073
 			public const int checkbox = 2131230835;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int chronometer = 2131230890;
+			// aapt resource value: 0x7f0800ab
+			public const int chronometer = 2131230891;
 			
 			// aapt resource value: 0x7f08004e
 			public const int clip_horizontal = 2131230798;
@@ -2507,8 +2510,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f080030
 			public const int end = 2131230768;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int end_padder = 2131230896;
+			// aapt resource value: 0x7f0800b1
+			public const int end_padder = 2131230897;
 			
 			// aapt resource value: 0x7f08003f
 			public const int enterAlways = 2131230783;
@@ -2552,8 +2555,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f080062
 			public const int icon = 2131230818;
 			
-			// aapt resource value: 0x7f0800af
-			public const int icon_group = 2131230895;
+			// aapt resource value: 0x7f0800b0
+			public const int icon_group = 2131230896;
 			
 			// aapt resource value: 0x7f08003a
 			public const int ifRoom = 2131230778;
@@ -2561,8 +2564,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f08005f
 			public const int image = 2131230815;
 			
-			// aapt resource value: 0x7f0800ab
-			public const int info = 2131230891;
+			// aapt resource value: 0x7f0800ac
+			public const int info = 2131230892;
 			
 			// aapt resource value: 0x7f080059
 			public const int italic = 2131230809;
@@ -2591,20 +2594,20 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f080061
 			public const int list_item = 2131230817;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int masked = 2131230899;
+			// aapt resource value: 0x7f0800b4
+			public const int masked = 2131230900;
 			
-			// aapt resource value: 0x7f0800a4
-			public const int media_actions = 2131230884;
+			// aapt resource value: 0x7f0800a5
+			public const int media_actions = 2131230885;
+			
+			// aapt resource value: 0x7f0800b6
+			public const int menu_preferences = 2131230902;
 			
 			// aapt resource value: 0x7f0800b5
-			public const int menu_preferences = 2131230901;
+			public const int menu_shoppinglist = 2131230901;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int menu_shoppinglist = 2131230900;
-			
-			// aapt resource value: 0x7f0800b1
-			public const int message = 2131230897;
+			// aapt resource value: 0x7f0800b2
+			public const int message = 2131230898;
 			
 			// aapt resource value: 0x7f080031
 			public const int middle = 2131230769;
@@ -2630,14 +2633,14 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f08001e
 			public const int normal = 2131230750;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int notification_background = 2131230893;
+			// aapt resource value: 0x7f0800ae
+			public const int notification_background = 2131230894;
+			
+			// aapt resource value: 0x7f0800a8
+			public const int notification_main_column = 2131230888;
 			
 			// aapt resource value: 0x7f0800a7
-			public const int notification_main_column = 2131230887;
-			
-			// aapt resource value: 0x7f0800a6
-			public const int notification_main_column_container = 2131230886;
+			public const int notification_main_column_container = 2131230887;
 			
 			// aapt resource value: 0x7f08004c
 			public const int parallax = 2131230796;
@@ -2657,8 +2660,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f080007
 			public const int progress_horizontal = 2131230727;
 			
-			// aapt resource value: 0x7f08009d
-			public const int quantity_textview = 2131230877;
+			// aapt resource value: 0x7f08009e
+			public const int quantity_textview = 2131230878;
 			
 			// aapt resource value: 0x7f080075
 			public const int radio = 2131230837;
@@ -2666,11 +2669,11 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f08004a
 			public const int right = 2131230794;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int right_icon = 2131230892;
+			// aapt resource value: 0x7f0800ad
+			public const int right_icon = 2131230893;
 			
-			// aapt resource value: 0x7f0800a8
-			public const int right_side = 2131230888;
+			// aapt resource value: 0x7f0800a9
+			public const int right_side = 2131230889;
 			
 			// aapt resource value: 0x7f08000c
 			public const int save_image_matrix = 2131230732;
@@ -2681,8 +2684,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f08000e
 			public const int save_scale_type = 2131230734;
 			
-			// aapt resource value: 0x7f08009c
-			public const int savechanges_button = 2131230876;
+			// aapt resource value: 0x7f08009d
+			public const int savechanges_button = 2131230877;
 			
 			// aapt resource value: 0x7f080029
 			public const int screen = 2131230761;
@@ -2777,11 +2780,14 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f08004b
 			public const int start = 2131230795;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int status_bar_latest_event_content = 2131230883;
+			// aapt resource value: 0x7f0800a4
+			public const int status_bar_latest_event_content = 2131230884;
+			
+			// aapt resource value: 0x7f08009c
+			public const int statuschange_edittext = 2131230876;
 			
 			// aapt resource value: 0x7f08009b
-			public const int statuschange_edittext = 2131230875;
+			public const int statuscurrent_textview = 2131230875;
 			
 			// aapt resource value: 0x7f080076
 			public const int submenuarrow = 2131230838;
@@ -2816,8 +2822,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f080015
 			public const int textinput_error = 2131230741;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int time = 2131230889;
+			// aapt resource value: 0x7f0800aa
+			public const int time = 2131230890;
 			
 			// aapt resource value: 0x7f08001c
 			public const int title = 2131230748;
@@ -2864,8 +2870,8 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f080016
 			public const int view_offset_helper = 2131230742;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int visible = 2131230898;
+			// aapt resource value: 0x7f0800b3
+			public const int visible = 2131230899;
 			
 			// aapt resource value: 0x7f08003c
 			public const int withText = 2131230780;
@@ -3289,11 +3295,11 @@ namespace KitchenStatusClient
 			// aapt resource value: 0x7f090025
 			public const int path_password_strike_through = 2131296293;
 			
-			// aapt resource value: 0x7f09002b
-			public const int placeholder = 2131296299;
+			// aapt resource value: 0x7f09002c
+			public const int placeholder = 2131296300;
 			
-			// aapt resource value: 0x7f09002a
-			public const int savechanges_text = 2131296298;
+			// aapt resource value: 0x7f09002b
+			public const int savechanges_text = 2131296299;
 			
 			// aapt resource value: 0x7f090011
 			public const int search_menu_title = 2131296273;
@@ -3303,6 +3309,9 @@ namespace KitchenStatusClient
 			
 			// aapt resource value: 0x7f090029
 			public const int statuschange_text = 2131296297;
+			
+			// aapt resource value: 0x7f09002a
+			public const int statuscurrent_text = 2131296298;
 			
 			static String()
 			{

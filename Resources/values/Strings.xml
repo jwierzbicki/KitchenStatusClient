@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">KitchenStatusClient</string>
     <string name="name_text">Name:</string>
-    <string name="statuschange_text">Changed:</string>
+    <string name="statuschange_text">Change:</string>
+    <string name="statuscurrent_text">Current state:</string>
     <string name="savechanges_text">Save changes</string>
     <string name="placeholder">PLACEHOLDER</string>
 </resources>

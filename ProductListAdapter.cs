@@ -45,7 +45,8 @@ namespace KitchenStatusClient
             View view = convertView;
             if (view == null)
                 view = context.LayoutInflater.Inflate(Resource.Layout.main_list_item, null);
-            view.FindViewById<TextView>(Resource.Id.name_textview).Text = item.Name.ToString();
+            
+            view.FindViewById<TextView>(Resource.Id.name_textview).Text = MainActivity.CapitalizeString(item.Name);
             view.FindViewById<TextView>(Resource.Id.quantity_textview).Text = item.StateCurrent.ToString();
             return view;
         }

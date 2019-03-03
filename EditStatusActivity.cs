@@ -14,10 +14,11 @@ using Newtonsoft.Json;
 
 namespace KitchenStatusClient
 {
-    [Activity(Label = "EditStatusActivity")]
+    [Activity(Theme = "@style/MyTheme")]
     public class EditStatusActivity : Activity
     {
         Product product;
+        TextView statusCurrentTextView;
         TextView productNameTextView;
         EditText statusChangeEditText;
         Button saveChangesButton;
@@ -31,11 +32,14 @@ namespace KitchenStatusClient
             product = JsonConvert.DeserializeObject<Product>(Intent.GetStringExtra("product"));
 
             productNameTextView = FindViewById<TextView>(Resource.Id.name_textview);
+            statusCurrentTextView = FindViewById<TextView>(Resource.Id.statuscurrent_textview);
             statusChangeEditText = FindViewById<EditText>(Resource.Id.statuschange_edittext);
             saveChangesButton = FindViewById<Button>(Resource.Id.savechanges_button);
 
-            productNameTextView.Text = product.Name;
-            statusChangeEditText.Text = product.StateCurrent.ToString();
+            // Set textview fields
+            productNameTextView.Text = MainActivity.CapitalizeString(product.Name);
+            statusCurrentTextView.Text = product.StateCurrent.ToString();
+            statusChangeEditText.Text = (0.0).ToString();
 
             saveChangesButton.Click += SaveChangesActionAsync;
         }
@@ -43,13 +47,20 @@ namespace KitchenStatusClient
         private async void SaveChangesActionAsync(object sender, EventArgs e)
         {
             var newValue = double.Parse(statusChangeEditText.Text);
-            
             var changes = new StatusChange[] { new StatusChange { Name = product.Name, Quantity = newValue } };
             var statusUpdate = new StatusUpdate { User = "anon", Changes = changes };
 
             Toast.MakeText(this, $"Saving changes with value: {newValue}", ToastLength.Short).Show();
+            // Call API
             await MainActivity.RunAsync(MainActivity.RequestType.PostNewStatusUpdate, statusUpdate);
             Toast.MakeText(this, "Changes saved", ToastLength.Short).Show();
+
+            var intent = new Intent();
+            SetResult(Result.Ok, intent);
+            // Close activity - return to main list
+            Finish();
         }
+
+
     }
 }
