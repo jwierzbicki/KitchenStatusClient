@@ -4,7 +4,7 @@
   <item
       android:id="@+id/menu_shoppinglist"
       android:icon="@mipmap/baseline_shopping_cart_black_18dp"
-      android:showAsAction="ifRoom"
+      app:showAsAction="ifRoom"
       android:title="Generate shopping list" />
   <item
       android:id="@+id/menu_preferences"
